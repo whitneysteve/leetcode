@@ -24,17 +24,21 @@ Run Tests
 
 `./test`
 
+While I make changes and to make sure I don't break anything else.
+
 Run Locally
 -----------
 
 `./run`
 
-This will run the individual challenges.
+This will run any individual challenges that need to be run from the command line, rather than tests.
 
 Run Linter
 ----------
 
 `./lint`
+
+To keep code in tip-top shape (usually followed by disabling loads of Rubocop rules).
 
 Commit, or Ship
 ---------------

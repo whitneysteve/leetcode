@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 # Class to represent the Dota2 Senate decisions.
+# https://leetcode.com/problems/dota2-senate
 class DotaSenate
   # rubocop:disable Metrics/AbcSize
   # rubocop:disable Metrics/CyclomaticComplexity
@@ -14,7 +15,7 @@ class DotaSenate
     r_banned = 0
     d_banned = 0
 
-    op_senate = senate.dup.split('')
+    op_senate = senate.dup.chars
     total_r, total_d = count_parties(op_senate)
 
     i = 0
