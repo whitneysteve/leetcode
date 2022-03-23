@@ -4,7 +4,7 @@ require_relative '../lib/dota_senate'
 require 'minitest/autorun'
 
 # Test for Dota senate.
-class DotaSeanteTest < Minitest::Test
+class DotaSenateTest < Minitest::Test
   def test_predict_radiant
     assert_equal 'Radiant', DotaSenate.new.predict_party_victory('RD')
   end
