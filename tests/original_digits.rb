@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require_relative '../lib/strings'
+require_relative '../lib/original_digits'
 require 'minitest/autorun'
 
 # Test for Strings functions.
-class StringsTest < Minitest::Test
+class OriginalDigitsTest < Minitest::Test
   def test_original_digits
-    strs = Strings.new
+    strs = OriginalDigits.new
     assert_equal '012', strs.original_digits('owoztneoer')
     assert_equal '45', strs.original_digits('fviefuro')
     assert_equal '16', strs.original_digits('soINxe')
@@ -15,7 +15,7 @@ class StringsTest < Minitest::Test
   end
 
   def test_original_digits_with_invalid_inputs
-    strs = Strings.new
+    strs = OriginalDigits.new
     [nil, '', '   '].each do |invalid|
       error = assert_raises { strs.original_digits(invalid) }
       assert_equal 'InvalidInput', error.message

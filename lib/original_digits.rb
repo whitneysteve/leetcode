@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-# Class to some random string functions.
-class Strings
-  # https://leetcode.com/problems/reconstruct-original-digits-from-english/
+# https://leetcode.com/problems/reconstruct-original-digits-from-english/
+class OriginalDigits
   # rubocop:disable Metrics/AbcSize
   # rubocop:disable Metrics/CyclomaticComplexity
   # rubocop:disable Metrics/MethodLength
