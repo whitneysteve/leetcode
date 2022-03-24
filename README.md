@@ -1,6 +1,6 @@
 # LeetCode
 
-Implementation of some test problems from LeetCode.
+Implementation of some test problems from LeetCode. I normally just go [here](https://leetcode.com/problemset/all/) and click 'Pick One' until I get a free one :)
 
 ## Setup
 
