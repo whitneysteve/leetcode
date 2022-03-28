@@ -10,18 +10,18 @@ class Parentheses
     stack = []
     stack.push(-1)
     str.size.times.each do |i|
-      if str[i] == '('
-        stack.push(i)
-      else
-        stack.pop
-        if stack.empty?
-          stack.push(i)
-        else
-          len = i - stack[-1]
-          max = len if len > max
-        end
-      end
+      len = check_max_len(str, i, stack, max)
+      max = len if len > max
     end
     max
+  end
+
+  def check_max_len(str, idx, stack, _max)
+    if str[idx] != '('
+      stack.pop
+      return idx - stack[-1] if !stack.empty?
+    end
+    stack.push(idx)
+    -1
   end
 end
