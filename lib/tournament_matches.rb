@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'set'
-
 # Determine the number of matches in a tournament.
 # https://leetcode.com/problems/count-of-matches-in-tournament/
 class TournamentMatches
