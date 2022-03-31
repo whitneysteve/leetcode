@@ -13,6 +13,6 @@ class ShortestEncodingOfWords
       end
     end
 
-    return longest_words.to_a.map(&:size).sum + longest_words.size
+    longest_words.to_a.map(&:size).sum + longest_words.size
   end
 end
