@@ -5,11 +5,13 @@
 class ContainsPattern
   # rubocop:disable Metrics/MethodLength
   def contains_pattern(arr, window_size, times)
-    i = 0
-    last_pattern = nil
+    validate(arr, window_size, times)
+
+    i = window_size
+    last_pattern = arr[0, window_size]
     repeat_count = 1
 
-    while i + window_size < arr.size
+    while i + window_size <= arr.size
       next_window = arr[i, window_size]
 
       if next_window == last_pattern
@@ -18,9 +20,9 @@ class ContainsPattern
 
         i += window_size
       else
-        last_pattern = next_window
         repeat_count = 1
-        i += determine_increment(arr, i, window_size, last_pattern)
+        last_pattern = arr[i - window_size + 1, window_size]
+        i += 1
       end
     end
 
@@ -30,11 +32,15 @@ class ContainsPattern
 
   private
 
-  def determine_increment(arr, index, window_size, last_pattern)
-    if arr[index + window_size, window_size] == last_pattern
-      window_size
-    else
-      1
-    end
+  def validate(arr, window_size, times)
+    validate_array(arr)
+
+    len = arr.size
+    raise 'InvalidM' if window_size.nil? || window_size < 1 || window_size > len
+    raise 'InvalidK' if times.nil? || times < 1 || times * window_size > len
+  end
+
+  def validate_array(arr)
+    raise 'InvalidArray' if !arr.is_a?(Array) || arr.empty?
   end
 end
