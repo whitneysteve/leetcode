@@ -19,6 +19,9 @@ class AllAsBeforeBsTest < Minitest::Test
     assert checker.check_string('cdsfdsfd')
   end
 
-  # nil
-  def test_invalid; end
+  def test_invalid
+    checker = AllAsBeforeBs.new
+    error = assert_raises { checker.check_string(nil) }
+    assert_equal 'InvalidStr', error.message
+  end
 end
